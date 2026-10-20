@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lịch họp công ty</title>
+    <style>
+        body { max-width: 800px; margin: 40px auto; padding: 0 18px; font: 16px/1.5 Arial, sans-serif; color: #243044; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 13px; border: 1px solid #bfc9d7; text-align: left; }
+        th { color: white; background: #304779; }
+        caption { margin-bottom: 12px; font-weight: 700; font-size: 1.25rem; }
+        tbody tr:nth-child(even) { background: #f3f6fa; }
+    </style>
+</head>
+<body>
+    <h1>Lịch họp công ty</h1>
+    <table>
+        <caption>Lịch họp tuần này</caption>
+        <thead><tr><th scope="col">Ngày</th><th scope="col">Giờ</th><th scope="col">Nội dung cuộc họp</th></tr></thead>
+        <tbody>
+            <tr><td rowspan="2">Thứ Hai</td><td>09:00</td><td>Họp kế hoạch tuần</td></tr>
+            <tr><td>14:00</td><td>Rà soát tiến độ dự án</td></tr>
+            <tr><td>Thứ Tư</td><td colspan="2">13:00–15:00 — Hội thảo sản phẩm (2 giờ)</td></tr>
+            <tr><td>Thứ Sáu</td><td>10:00</td><td>Tổng kết tuần</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>

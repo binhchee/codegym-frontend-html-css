@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Grid Property Examples</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 28px 18px 50px; color: #263447; background: #f4f7fa; font: 15px/1.5 system-ui, sans-serif; }
+    main { width: min(1100px, 94%); margin: auto; }
+    h1 { margin-top: 0; }
+    section { margin: 18px 0; padding: 18px; border: 1px solid #dfe6ee; border-radius: 12px; background: white; }
+    h2 { margin: 0 0 12px; font-size: 1.05rem; }
+    .grid { display: grid; gap: 10px; min-height: 110px; padding: 10px; border-radius: 8px; background: #eef2f5; }
+    .cell { display: grid; min-height: 56px; place-items: center; border-radius: 6px; color: #123d2d; background: #b9dfc4; font-weight: 750; }
+    .template { grid-template-columns: 100px 200px 1fr; }
+    .column-start { grid-template-columns: repeat(4, 1fr); }
+    .column-start .featured { grid-column-start: 2; grid-column-end: span 2; background: #ffce83; }
+    .row-gap { grid-template-columns: repeat(3, 1fr); row-gap: 24px; column-gap: 10px; }
+    .row-span { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 70px); }
+    .row-span .tall { grid-row: 1 / span 2; background: #9ccbd9; }
+    code { color: #34569a; }
+    @media (max-width: 520px) { .template { grid-template-columns: 1fr 1fr; } .column-start { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>CSS Grid: four property examples</h1>
+    <section><h2>1. grid-template-columns: 100px 200px 1fr</h2><div class="grid template"><div class="cell">100px</div><div class="cell">200px</div><div class="cell">1fr</div></div></section>
+    <section><h2>2. grid-column-start with a line and span</h2><div class="grid column-start"><div class="cell">A</div><div class="cell featured">Starts at line 2 · spans 2 columns</div><div class="cell">C</div></div></section>
+    <section><h2>3. row-gap: 24px</h2><div class="grid row-gap"><div class="cell">Row 1 · A</div><div class="cell">Row 1 · B</div><div class="cell">Row 1 · C</div><div class="cell">Row 2 · A</div><div class="cell">Row 2 · B</div><div class="cell">Row 2 · C</div></div></section>
+    <section><h2>4. grid-row: 1 / span 2</h2><div class="grid row-span"><div class="cell tall">Spans 2 rows</div><div class="cell">A</div><div class="cell">B</div><div class="cell">C</div><div class="cell">D</div></div></section>
+    <p>Resize the page to see the examples adapt to a narrow viewport.</p>
+  </main>
+</body>
+</html>

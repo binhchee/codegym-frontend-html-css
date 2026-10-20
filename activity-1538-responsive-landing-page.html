@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evergreen — Responsive Landing Page</title>
+  <style>
+    :root { --green: #246b54; --ink: #1d2b26; --muted: #62726a; --mint: #e8f4ed; font-family: system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); }
+    .wrap { width: min(1120px, 92%); margin: auto; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 18px; }
+    .logo { color: var(--green); font-size: 1.2rem; font-weight: 900; text-decoration: none; }
+    nav { display: flex; gap: 20px; }
+    nav a { color: var(--muted); text-decoration: none; }
+    .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; padding: 66px 0; }
+    .hero h1 { max-width: 620px; margin: 0 0 16px; font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.02; }
+    .hero p { max-width: 560px; color: var(--muted); font-size: 1.08rem; line-height: 1.7; }
+    .button { display: inline-block; margin-top: 12px; padding: 13px 20px; border-radius: 8px; color: white; background: var(--green); font-weight: 750; text-decoration: none; }
+    .hero-art { display: grid; min-height: 300px; place-items: center; border-radius: 45% 45% 18px 18px; background: var(--mint); font-size: 6rem; }
+    .services { padding: 56px 0; background: #f6f8f5; }
+    .services h2, .testimonials h2 { margin-top: 0; text-align: center; font-size: 2rem; }
+    .service-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service { padding: 22px; border: 1px solid #e4eae5; border-radius: 12px; background: white; }
+    .service p { color: var(--muted); line-height: 1.65; }
+    .testimonials { padding: 58px 0; text-align: center; }
+    .quote { max-width: 650px; margin: auto; color: var(--muted); font-size: 1.1rem; line-height: 1.7; }
+    footer { padding: 26px; color: white; background: #18372d; text-align: center; }
+    @media (max-width: 760px) {
+      header { flex-wrap: wrap; }
+      nav { width: 100%; flex-wrap: wrap; gap: 12px 18px; }
+      .hero { grid-template-columns: 1fr; padding-block: 46px; }
+      .hero-art { min-height: 220px; }
+      .service-container { grid-template-columns: 1fr; }
+      .services, .testimonials { padding: 40px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap"><a class="logo" href="#">Evergreen</a><nav aria-label="Main"><a href="#services">Services</a><a href="#story">Our story</a><a href="#contact">Contact</a></nav></header>
+  <main>
+    <section class="hero wrap" id="story"><div><p>GROW WITH PURPOSE</p><h1>Small changes. A greener tomorrow.</h1><p>Discover everyday ways to live more thoughtfully, connect with your community, and care for the places we share.</p><a class="button" href="#services">Explore what we do</a></div><div class="hero-art" aria-hidden="true">🌱</div></section>
+    <section class="services" id="services"><div class="wrap"><h2>Make a difference, together</h2><div class="service-container"><article class="service"><h3>Community gardens</h3><p>Find a local growing space and learn from your neighbors.</p></article><article class="service"><h3>Everyday learning</h3><p>Explore practical guides for reducing waste and saving resources.</p></article><article class="service"><h3>Local action</h3><p>Join small projects that make shared spaces more welcoming.</p></article></div></div></section>
+    <section class="testimonials wrap"><h2>Rooted in community</h2><p class="quote">“The best place to start is right where you are. One small idea can bring people together.”</p></section>
+  </main>
+  <footer id="contact">Evergreen Community · hello@example.com · © 2026</footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Page Layout</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #283447; background: #f3f6f9; font: 16px/1.55 system-ui, sans-serif; }
+    .page { width: min(1120px, 94%); margin: 20px auto; }
+    .header { min-height: 110px; padding: 24px; border-radius: 12px; color: white; background: #365f91; }
+    .nav { display: flex; gap: 22px; padding: 14px 20px; color: white; background: #27476f; }
+    .nav a { color: inherit; text-decoration: none; }
+    .columns { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 3fr) minmax(170px, 1.2fr); gap: 14px; padding-block: 14px; }
+    .panel { min-height: 300px; padding: 18px; border-radius: 10px; background: #e4edf6; }
+    .content { background: white; }
+    .right { background: #e7f0e4; }
+    .footer { padding: 18px; color: white; background: #24384f; text-align: center; }
+    @media (max-width: 720px) {
+      .nav { flex-wrap: wrap; }
+      .columns { grid-template-columns: 1fr; }
+      .panel { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header"><h1>Responsive Layout</h1><p>Flexible columns adapt to the available screen.</p></header>
+    <nav class="nav" aria-label="Navigation"><a href="#main">Home</a><a href="#topics">Topics</a><a href="#about">About</a></nav>
+    <div class="columns">
+      <aside class="panel"><h2 id="topics">Topics</h2><p>HTML</p><p>CSS</p><p>Responsive design</p></aside>
+      <main class="panel content" id="main"><h2>Main content</h2><p>The central column expands to use the available space. Side columns remain readable and move above or below the content on narrow screens.</p></main>
+      <aside class="panel right" id="about"><h2>About</h2><p>A simple responsive layout built with CSS Grid.</p></aside>
+    </div>
+    <footer class="footer">Copyright © 2026 Responsive Layout</footer>
+  </div>
+</body>
+</html>

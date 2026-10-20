@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Navigation</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #f8fafc; background: #f2f5f8; font: 16px/1.5 system-ui, sans-serif; }
+    .site-header { position: sticky; top: 0; z-index: 2; color: white; background: #192638; }
+    .nav { display: flex; width: min(1100px, 94%); min-height: 72px; margin: auto; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { color: white; font-size: 1.2rem; font-weight: 850; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: #d9e2ef; text-decoration: none; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: #ffd166; font-weight: 700; }
+    .menu-toggle { display: none; width: 46px; height: 44px; border: 1px solid #ffffff55; border-radius: 8px; color: white; background: transparent; font-size: 1.5rem; cursor: pointer; }
+    main { width: min(900px, 92%); margin: 48px auto; padding: 32px; border-radius: 16px; color: #243044; background: white; }
+    @media (max-width: 700px) {
+      .nav { flex-wrap: wrap; padding-block: 12px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; flex-basis: 100%; align-items: stretch; flex-direction: column; gap: 0; padding-bottom: 8px; }
+      .nav-links.active { display: flex; }
+      .nav-links a { padding: 12px 8px; border-top: 1px solid #ffffff20; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a class="brand" href="#home">Northstar</a>
+      <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Trang chủ</a><a href="#courses">Khóa học</a><a href="#about">Giới thiệu</a><a href="#contact">Liên hệ</a>
+      </div>
+    </nav>
+  </header>
+  <main id="home"><h1>Navigation thích ứng trên mọi màn hình</h1><p>Trên desktop menu hiển thị ngang; trên màn hình nhỏ, nút ☰ mở và đóng các liên kết.</p><p id="courses">Khóa học · Frontend · Responsive Design</p><p id="about">Bố cục co giãn, thao tác được bằng chuột hoặc bàn phím.</p><p id="contact">Liên hệ · hello@example.com</p></main>
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const links = document.querySelector("#nav-links");
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      toggle.setAttribute("aria-label", expanded ? "Mở menu" : "Đóng menu");
+      links.classList.toggle("active", !expanded);
+    });
+    links.addEventListener("click", event => {
+      if (event.target.closest("a")) {
+        links.classList.remove("active");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Mở menu");
+      }
+    });
+  </script>
+</body>
+</html>

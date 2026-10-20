@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Gallery</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 32px 18px; color: #263344; background: #f5f7f9; font: 16px/1.5 system-ui, sans-serif; }
+    main { width: min(1100px, 94%); margin: auto; }
+    h1 { margin-top: 0; }
+    .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    figure { overflow: hidden; margin: 0; border-radius: 12px; background: white; box-shadow: 0 5px 20px #16233b14; }
+    .art { display: grid; aspect-ratio: 4 / 3; place-items: center; color: white; background: linear-gradient(140deg, var(--a), var(--b)); font-size: 3.5rem; }
+    figcaption { padding: 12px 14px; font-weight: 700; }
+    @media (max-width: 700px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 500px) { .gallery { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Little moments outdoors</h1>
+    <p>Responsive gallery: four columns on large screens, two on tablet, and one on small phones.</p>
+    <section class="gallery" aria-label="Photo gallery">
+      <figure><div class="art" style="--a:#7bb98b;--b:#287b6d" role="img" aria-label="Green hills">⛰</div><figcaption>Morning hills</figcaption></figure>
+      <figure><div class="art" style="--a:#f5b76f;--b:#e37c59" role="img" aria-label="Warm sunset">☀</div><figcaption>Golden hour</figcaption></figure>
+      <figure><div class="art" style="--a:#83c3d4;--b:#4686a2" role="img" aria-label="Blue lake">≈</div><figcaption>Quiet water</figcaption></figure>
+      <figure><div class="art" style="--a:#9a8bd0;--b:#5c5599" role="img" aria-label="Mountain sky">✦</div><figcaption>Evening sky</figcaption></figure>
+      <figure><div class="art" style="--a:#d78f9b;--b:#a15171" role="img" aria-label="Pink flowers">✿</div><figcaption>Wild blooms</figcaption></figure>
+      <figure><div class="art" style="--a:#b9c77a;--b:#67814b" role="img" aria-label="Leafy canopy">❋</div><figcaption>Forest canopy</figcaption></figure>
+      <figure><div class="art" style="--a:#86aaa4;--b:#4a797b" role="img" aria-label="Coastal path">⌁</div><figcaption>Coastal path</figcaption></figure>
+      <figure><div class="art" style="--a:#e1a86b;--b:#b76e55" role="img" aria-label="Desert dunes">◒</div><figcaption>Soft dunes</figcaption></figure>
+    </section>
+  </main>
+</body>
+</html>

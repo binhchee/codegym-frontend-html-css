@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Grid — SASS refactor</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #263445; background: #f2f5f7; font: 1rem/1.5 Arial,sans-serif; }
+    .gridcontainer { width: min(100% - 2rem,1120px); margin-inline: auto; }
+    .gridwrapper { position: relative; width: 100%; margin-block: .75rem; overflow: auto; }
+    .gridwrapper--header { height: 5.5rem; background: #9933cc; }
+    .gridwrapper--main { min-height: 18rem; background: white; }
+    .gridwrapper--footer { height: 3.25rem; background: #0099cc; }
+    .gridcontent { float: left; width: 8.333%; min-height: 100%; border-right: 1px solid #c9d2dc; background: #84c754; }
+    .gridcontent--sidebar,.gridcontent--article { width: 100%; padding: 1rem; background: white; }
+    .panel { min-height: 2rem; margin-bottom: .75rem; border-radius: .25rem; background: #33b5e5; }
+    .panel:last-child { margin-bottom: 0; }
+    @media (min-width: 700px) {
+      .gridwrapper--main { display: flex; }
+      .gridcontent--sidebar { width: 25%; }
+      .gridcontent--article { width: 75%; }
+    }
+    @media (min-width: 1024px) { .gridcontainer { width: min(100% - 3rem,1120px); } }
+  </style>
+</head>
+<body>
+  <main class="gridcontainer">
+    <header class="gridwrapper gridwrapper--header" aria-label="Header"></header>
+    <section class="gridwrapper gridwrapper--main" aria-label="Nội dung">
+      <aside class="gridcontent gridcontent--sidebar" aria-label="Menu">
+        <div class="panel"></div><div class="panel"></div><div class="panel"></div><div class="panel"></div>
+      </aside>
+      <article class="gridcontent gridcontent--article">
+        <h1>Responsive Grid</h1>
+        <p>Giao diện chuyển từ bố cục dọc trên màn hình nhỏ sang hai cột khi màn hình rộng hơn.</p>
+        <p>Các biến, mixin, vòng lặp và breakpoint được tách rõ để dễ điều chỉnh.</p>
+      </article>
+    </section>
+    <footer class="gridwrapper gridwrapper--footer" aria-label="Footer"></footer>
+  </main>
+</body>
+</html>

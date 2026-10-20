@@ -1,0 +1,106 @@
+$grid-columns: 12;
+$gutter: 1rem;
+$line-color: #c9d2dc;
+$green: #84c754;
+$header-purple: #9933cc;
+$footer-blue: #0099cc;
+$panel-blue: #33b5e5;
+$breakpoints: (
+  tablet: 700px,
+  desktop: 1024px
+);
+
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin breakpoint($name) {
+  @media (min-width: map-get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #263445;
+  background: #f2f5f7;
+  font: 1rem/1.5 Arial, sans-serif;
+}
+
+.gridcontainer {
+  width: min(100% - 2rem, 1120px);
+  margin-inline: auto;
+}
+
+.gridwrapper {
+  @include clearfix;
+  position: relative;
+  width: 100%;
+  margin-block: .75rem;
+  overflow: auto;
+
+  &--header { height: 5.5rem; background: $header-purple; }
+  &--main { min-height: 18rem; background: #fff; }
+  &--footer { height: 3.25rem; background: $footer-blue; }
+}
+
+.gridcontent {
+  float: left;
+  width: 100% / $grid-columns;
+  min-height: 100%;
+  border-right: 1px solid $line-color;
+  background: $green;
+
+  &:last-child { border-right: 0; }
+
+  &--sidebar {
+    width: 100%;
+    padding: $gutter;
+    background: #fff;
+  }
+
+  &--article {
+    width: 100%;
+    padding: $gutter;
+    background: #fff;
+  }
+}
+
+.panel {
+  min-height: 2rem;
+  margin-bottom: .75rem;
+  border-radius: .25rem;
+  background: $panel-blue;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+@for $column from 1 through $grid-columns {
+  .col-#{$column} {
+    width: 100% * $column / $grid-columns;
+  }
+}
+
+@include breakpoint(tablet) {
+  .gridwrapper {
+    &--main { display: flex; }
+  }
+
+  .gridcontent {
+    &--sidebar { width: 25%; }
+    &--article { width: 75%; }
+  }
+}
+
+@include breakpoint(desktop) {
+  .gridcontainer { width: min(100% - 3rem, 1120px); }
+  .gridwrapper { margin-block: 1rem; }
+}

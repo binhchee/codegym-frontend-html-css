@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sticky Navigation</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #243044; line-height: 1.6; }
+    .sticky-menu {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #173b62;
+      box-shadow: 0 3px 12px #142d4833;
+    }
+    .sticky-menu ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      list-style: none;
+    }
+    .sticky-menu a {
+      display: block;
+      padding: 10px 16px;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .sticky-menu a:hover, .sticky-menu a:focus-visible { background: #2b5b88; }
+    header, section { padding: 70px max(24px, calc((100% - 900px) / 2)); }
+    header { min-height: 360px; background: #eaf3fb; }
+    section { min-height: 500px; scroll-margin-top: 72px; }
+    section:nth-of-type(even) { background: #f5f7fa; }
+    h1, h2 { color: #173b62; }
+    footer { padding: 24px; text-align: center; background: #173b62; color: white; }
+    @media (max-width: 520px) {
+      .sticky-menu ul { gap: 2px; padding: 6px; }
+      .sticky-menu a { padding: 8px; font-size: 14px; }
+      header, section { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sticky-menu" aria-label="Điều hướng chính">
+    <ul>
+      <li><a href="#home">Trang chủ</a></li>
+      <li><a href="#about">Giới thiệu</a></li>
+      <li><a href="#services">Dịch vụ</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+  </nav>
+  <header id="home">
+    <h1>Chào mừng đến với trang web của chúng tôi</h1>
+    <p>Cuộn trang để xem thanh điều hướng luôn dính ở đầu màn hình.</p>
+  </header>
+  <main>
+    <section id="about">
+      <h2>Giới thiệu</h2>
+      <p>Chúng tôi tạo ra những trải nghiệm web hữu ích, dễ tiếp cận và thân thiện với mọi thiết bị.</p>
+      <p>Thanh điều hướng sử dụng <code>position: sticky</code> cùng <code>top: 0</code>, vì vậy nó bám ở đầu màn hình khi cuộn.</p>
+    </section>
+    <section id="services">
+      <h2>Dịch vụ</h2>
+      <p>Thiết kế giao diện, xây dựng website và hỗ trợ phát triển sản phẩm số.</p>
+      <p>Nội dung dài hơn giúp bạn dễ dàng kiểm tra hành vi sticky trong quá trình cuộn trang.</p>
+    </section>
+    <section id="contact">
+      <h2>Liên hệ</h2>
+      <p>Email: hello@example.com</p>
+      <p>Chúng tôi sẵn sàng trao đổi về ý tưởng website của bạn.</p>
+    </section>
+  </main>
+  <footer>© 2025 Our Website</footer>
+</body>
+</html>

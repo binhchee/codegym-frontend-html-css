@@ -1,0 +1,11 @@
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; padding: 45px 18px; color: #27344a; background: #eef2fb; font: 16px/1.6 Arial, sans-serif; }
+main { max-width: 700px; margin: auto; padding: 30px; border: 1px solid #dce3f1; border-radius: 14px; background: white; }
+#page-title { color: #304779; text-align: center; }
+.intro { color: #5b6679; }
+h2, .intro { margin-bottom: 12px; }
+.hobbies li { margin: 6px 0; color: #34746b; }
+.hobbies li:nth-child(2) { color: #b26932; }
+.hobbies li:last-child { color: #6554a5; }
+button { padding: 11px 18px; border: 0; border-radius: 7px; color: white; background: #405db0; font: inherit; cursor: pointer; transition: background .2s, transform .2s; }
+button:hover { transform: translateY(-2px); background: #293f84; }

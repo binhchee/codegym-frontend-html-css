@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic Layout — HTML and CSS</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #263445; background: #f4f6f8; font: 15px/1.5 Arial, sans-serif; }
+    #main { width: min(1100px, 94%); margin: 20px auto; }
+    #head { display: grid; min-height: 105px; place-items: center start; padding: 24px; color: white; background: #4a6fa5; }
+    #head h1 { margin: 0; }
+    #head-link { padding: 13px 18px; color: white; background: #304b70; }
+    #head-link a { margin-right: 22px; color: inherit; text-decoration: none; }
+    #head-link a:hover { text-decoration: underline; }
+    #left, #content, #right { float: left; min-height: 350px; padding: 18px; }
+    #left { width: 20%; background: #e3ebf4; }
+    #content { width: 58%; background: white; }
+    #right { width: 22%; background: #e8f0e6; }
+    #left ul { padding-left: 18px; }
+    #footer { clear: both; padding: 18px; color: white; background: #25364a; text-align: center; }
+    .clearfix::after { display: block; clear: both; content: ""; }
+    @media (max-width: 700px) {
+      #head-link a { display: inline-block; margin: 4px 12px 4px 0; }
+      #left, #content, #right { float: none; width: 100%; min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main id="main">
+    <header id="head"><h1>My Learning Portal</h1></header>
+    <nav id="head-link" aria-label="Primary navigation"><a href="#content">Home</a><a href="#left">Courses</a><a href="#right">Resources</a></nav>
+    <div class="clearfix">
+      <aside id="left"><h2>Topics</h2><ul><li>HTML basics</li><li>CSS layout</li><li>Responsive design</li></ul></aside>
+      <section id="content"><h2>Welcome</h2><p>This basic page layout uses separate regions for navigation, sidebars, main content, and footer.</p><p>Resize the page to see the columns stack on narrow screens.</p></section>
+      <aside id="right"><h2>Highlights</h2><p>Keep learning with short, practical exercises.</p></aside>
+    </div>
+    <footer id="footer">Copyright © 2026 My Learning Portal</footer>
+  </main>
+</body>
+</html>

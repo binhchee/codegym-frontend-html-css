@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý Overflow</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 36px 20px; color: #273244; background: #f2f5f8; font: 16px/1.6 system-ui, sans-serif; }
+    main { width: min(720px, 100%); margin: auto; }
+    h1 { margin: 0 0 8px; color: #174c55; }
+    .intro { margin: 0 0 26px; color: #5f6e7d; }
+    .overflow-box { width: 300px; height: 100px; overflow: auto; padding: 10px; border: 1px solid #9aa8b5; border-radius: 8px; background: #e8ecef; }
+    .note { margin-top: 22px; padding: 16px; border-left: 4px solid #237b78; background: #fff; }
+    code { color: #174c55; font-weight: 700; }
+    @media (max-width: 360px) { .overflow-box { width: 100%; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Kiểm soát nội dung bị tràn</h1>
+    <p class="intro">Khối minh họa có kích thước cố định; nội dung dài sẽ cuộn bên trong thay vì làm vỡ bố cục.</p>
+    <div class="overflow-box" tabindex="0" aria-label="Đoạn văn có thể cuộn">
+      Đây là một đoạn văn bản dài để kiểm tra cách thuộc tính overflow xử lý nội dung vượt quá chiều cao của phần tử. Nội dung được chia thành nhiều câu để tạo vùng cuộn rõ ràng. Người dùng có thể lăn chuột hoặc dùng phím Tab rồi các phím mũi tên để đọc phần còn lại. Một bố cục tốt giữ nguyên kích thước của thẻ chứa trong khi vẫn cho phép truy cập toàn bộ nội dung. Hãy tiếp tục cuộn để xem thêm thông tin hữu ích về mô hình hộp và cách tổ chức giao diện.
+    </div>
+    <aside class="note"><strong>Kết quả mong đợi:</strong> <code>overflow: auto</code> chỉ hiển thị thanh cuộn khi nội dung vượt quá khung.</aside>
+  </main>
+</body>
+</html>

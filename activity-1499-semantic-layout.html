@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semantic HTML5 Layout</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #243044; background: #f3f6f9; font: 16px/1.6 system-ui, sans-serif; }
+    .page { width: min(1120px, 94%); margin: 22px auto; }
+    header, nav, main, aside, footer { padding: 20px; }
+    header { color: white; background: #355c7d; }
+    header h1 { margin: 0; }
+    nav { display: flex; gap: 22px; background: #28465f; }
+    nav a { color: white; text-decoration: none; }
+    nav a:hover, nav a:focus-visible { color: #ffd166; font-weight: 700; }
+    .columns { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 3fr) minmax(160px, 1.1fr); gap: 16px; padding: 16px 0; }
+    aside, main { min-height: 280px; border-radius: 10px; background: white; }
+    aside { background: #e8eef3; }
+    footer { color: white; background: #263746; text-align: center; }
+    @media (max-width: 760px) {
+      nav { flex-wrap: wrap; }
+      .columns { grid-template-columns: 1fr; }
+      aside, main { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header><h1>Learning Journal</h1><p>A semantic HTML5 page structure</p></header>
+    <nav aria-label="Main navigation"><a href="#main-content">Home</a><a href="#articles">Articles</a><a href="#about">About</a></nav>
+    <div class="columns">
+      <aside aria-label="Topics"><h2>Topics</h2><ul><li>Web foundations</li><li>CSS patterns</li><li>Accessibility</li></ul></aside>
+      <main id="main-content"><article id="articles"><h2>Building a clear page layout</h2><p>Semantic regions make the structure understandable to people, browsers, and assistive technologies.</p><p>CSS Grid arranges the sidebars and main content, then stacks them on smaller screens.</p></article></main>
+      <aside id="about" aria-label="About this site"><h2>About</h2><p>Short lessons and practical notes for learning frontend development.</p></aside>
+    </div>
+    <footer>Copyright © 2026 Learning Journal</footer>
+  </div>
+</body>
+</html>

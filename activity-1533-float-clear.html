@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bố cục hai cột — Float và Clear</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 32px 18px; color: #243044; background: #f3f6f8; font: 16px/1.6 system-ui, sans-serif; }
+    .container { width: min(1100px, 100%); margin: auto; }
+    .left-column { float: left; width: 60%; min-height: 280px; padding: 24px; border-radius: 12px; background: #d9eff8; }
+    .right-column { float: right; width: 38%; min-height: 280px; padding: 24px; border-radius: 12px; background: #e2f2df; }
+    .container::after { display: block; clear: both; content: ""; }
+    .left-column h1 { margin-top: 0; }
+    .right-column ul { padding-left: 20px; }
+    .after-layout { margin-top: 18px; padding: 14px; border-left: 4px solid #347a66; background: white; }
+    @media (max-width: 680px) {
+      .left-column, .right-column { float: none; width: 100%; min-height: auto; }
+      .right-column { margin-top: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="left-column">
+      <h1>Nội dung chính</h1>
+      <p>Cột bên trái chiếm 60% chiều rộng. Nội dung có thể gồm bài viết, hình ảnh hoặc hướng dẫn chi tiết.</p>
+      <p>Clearfix trên phần tử bao ngoài giúp chiều cao của container bao trọn các phần tử float.</p>
+    </section>
+    <aside class="right-column">
+      <h2>Sidebar</h2>
+      <ul><li>Bài viết mới</li><li>Chủ đề nổi bật</li><li>Tài nguyên hữu ích</li></ul>
+    </aside>
+    <div class="after-layout">Phần tử tiếp theo nằm dưới cả hai cột nhờ clearfix.</div>
+  </main>
+</body>
+</html>

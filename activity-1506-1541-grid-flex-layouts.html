@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Grid and Flexbox Layout Lab</title>
+  <style>
+    :root { --ink: #253044; --muted: #647187; --line: #dfe5ee; --blue: #d9eafb; --green: #dcefe2; --orange: #ffe2bb; --purple: #e9ddf5; font-family: system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 28px 18px 50px; color: var(--ink); background: #f3f6fa; line-height: 1.5; }
+    main { width: min(1100px, 94%); margin: auto; }
+    h1 { margin-top: 0; }
+    .intro { color: var(--muted); }
+    .demo { margin: 18px 0; padding: 18px; border: 1px solid var(--line); border-radius: 13px; background: white; }
+    .demo h2 { margin: 0 0 10px; font-size: 1.08rem; }
+    .grid { display: grid; padding: 10px; border-radius: 8px; background: #f1f4f8; }
+    .grid > div, .flex > div { display: grid; min-height: 58px; place-items: center; padding: 9px; border-radius: 6px; font-weight: 700; }
+    .grid > div:nth-child(3n + 1), .flex > div:nth-child(3n + 1) { background: var(--blue); }
+    .grid > div:nth-child(3n + 2), .flex > div:nth-child(3n + 2) { background: var(--green); }
+    .grid > div:nth-child(3n), .flex > div:nth-child(3n) { background: var(--orange); }
+    .gap-a { grid-template-columns: repeat(3, 1fr); grid-gap: 18px; }
+    .gap-b { grid-template-columns: repeat(3, 1fr); grid-row-gap: 24px; grid-column-gap: 10px; }
+    .responsive-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 14px; }
+    .site-grid { grid-template-columns: minmax(140px, 1fr) minmax(0, 3fr) minmax(150px, 1fr); gap: 12px; }
+    .site-grid > div { min-height: 130px; }
+    .site-grid > div:first-child, .site-grid > div:last-child { background: var(--purple); }
+    .flex { display: flex; gap: 10px; min-height: 95px; padding: 10px; border-radius: 8px; background: #f1f4f8; }
+    .wrap-demo { flex-wrap: wrap; }
+    .wrap-demo > div { flex: 0 0 220px; }
+    .basis-demo > div { flex: 1 1 180px; }
+    .grow-demo > div { flex-basis: 120px; }
+    .grow-demo > div:nth-child(1) { flex-grow: 1; }
+    .grow-demo > div:nth-child(2) { flex-grow: 2; }
+    .grow-demo > div:nth-child(3) { flex-grow: 1; }
+    .flow-demo { flex-flow: row wrap; }
+    .flow-demo > div { flex: 0 1 200px; }
+    @media (max-width: 650px) {
+      .site-grid { grid-template-columns: 1fr; }
+      .site-grid > div { min-height: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>CSS Grid and Flexbox Layout Lab</h1>
+    <p class="intro">Examples for grid-gap, responsive Grid, flex-wrap, flex-basis, flex-grow, and flex-flow. Resize the browser to compare the layouts.</p>
+    <section class="demo"><h2>Grid gap example 1 — grid-gap: 18px</h2><div class="grid gap-a"><div>Item 1</div><div>Item 2</div><div>Item 3</div><div>Item 4</div><div>Item 5</div><div>Item 6</div></div></section>
+    <section class="demo"><h2>Grid gap example 2 — separate row and column gaps</h2><div class="grid gap-b"><div>Row 1</div><div>Row 1</div><div>Row 1</div><div>Row 2</div><div>Row 2</div><div>Row 2</div></div></section>
+    <section class="demo"><h2>Responsive Grid — auto-fit and minmax</h2><div class="grid responsive-grid"><div>Responsive card 1</div><div>Responsive card 2</div><div>Responsive card 3</div><div>Responsive card 4</div></div></section>
+    <section class="demo"><h2>Page layout with CSS Grid</h2><div class="grid site-grid"><div>Sidebar</div><div>Main content adapts to remaining space</div><div>Related links</div></div></section>
+    <section class="demo"><h2>flex-wrap: wrap</h2><div class="flex wrap-demo"><div>Wrap item 1</div><div>Wrap item 2</div><div>Wrap item 3</div><div>Wrap item 4</div></div></section>
+    <section class="demo"><h2>flex-basis: 180px with flexible sizing</h2><div class="flex basis-demo"><div>Basis item 1</div><div>Basis item 2</div><div>Basis item 3</div></div></section>
+    <section class="demo"><h2>flex-grow: 1 : 2 : 1</h2><div class="flex grow-demo"><div>Grow 1</div><div>Grow 2</div><div>Grow 1</div></div></section>
+    <section class="demo"><h2>flex-flow: row wrap</h2><div class="flex flow-demo"><div>Flow item 1</div><div>Flow item 2</div><div>Flow item 3</div><div>Flow item 4</div></div></section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trello Notes — Hai phương án phối màu newsletter</title>
+  <style>
+    :root {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #182230;
+      background: #f4f6fa;
+      font-synthesis: none;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 32px 18px 56px; }
+    .page { max-width: 980px; margin: auto; }
+    .intro { margin: 0 auto 28px; text-align: center; }
+    .intro p { color: #627083; }
+    .newsletter {
+      --brand: #2563eb;
+      --tint: #eff6ff;
+      --accent: #fbbf24;
+      --ink: #172033;
+      --muted: #556276;
+      --paper: #fff;
+      overflow: hidden;
+      max-width: 680px;
+      margin: 24px auto;
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: 0 18px 60px rgb(21 36 64 / 12%);
+    }
+    .newsletter.green {
+      --brand: #087f5b;
+      --tint: #e8f5ee;
+      --accent: #f2a65a;
+      --ink: #18352c;
+      --muted: #536b61;
+      --paper: #fffefa;
+    }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 28px;
+      border-bottom: 1px solid color-mix(in srgb, var(--brand) 14%, white);
+    }
+    .logo { color: var(--brand); font-size: 1.35rem; font-weight: 850; letter-spacing: -.04em; }
+    .topline a, .text-link { color: var(--brand); font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .hero { padding: 38px 32px 32px; background: var(--tint); }
+    .eyebrow { margin: 0 0 10px; color: var(--brand); font-size: .76rem; font-weight: 850; letter-spacing: .13em; }
+    h1 { max-width: 520px; margin: 0; color: var(--ink); font-size: clamp(2rem, 6vw, 3.1rem); line-height: 1.06; letter-spacing: -.05em; }
+    .hero p, .body-copy { max-width: 540px; color: var(--muted); line-height: 1.7; }
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 13px 20px;
+      border-radius: 9px;
+      color: #fff;
+      background: var(--brand);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .body-copy { padding: 25px 32px 4px; }
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 18px;
+      align-items: center;
+      margin: 18px 32px 32px;
+      padding: 20px;
+      border: 1px solid color-mix(in srgb, var(--brand) 16%, white);
+      border-radius: 14px;
+      background: var(--paper);
+    }
+    .illustration {
+      display: grid;
+      min-height: 150px;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--brand);
+      background: var(--tint);
+      font-size: 3rem;
+    }
+    .feature h2 { margin: 0 0 8px; color: var(--ink); font-size: 1.25rem; }
+    .feature p { margin: 0; color: var(--muted); line-height: 1.6; }
+    .footer { padding: 22px 28px; color: var(--muted); background: var(--tint); font-size: .9rem; text-align: center; }
+    .palette { max-width: 680px; margin: 0 auto; color: #465366; font-size: .9rem; }
+    .swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+    .swatch { padding: 7px 10px; border-radius: 7px; color: #fff; font: 600 .8rem ui-monospace, monospace; }
+    @media (max-width: 560px) {
+      body { padding-inline: 12px; }
+      .topline { padding: 16px 18px; }
+      .hero { padding: 30px 20px 25px; }
+      .body-copy { padding-inline: 20px; }
+      .feature { grid-template-columns: 1fr; margin-inline: 20px; }
+      .illustration { min-height: 110px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <h1>Newsletter: hai phương án phối màu</h1>
+      <p>Cùng một bố cục, hai bộ màu bổ túc khác nhau. Bản A dùng xanh dương–vàng; bản B dùng xanh lá–cam.</p>
+    </header>
+
+    <article class="newsletter">
+      <div class="topline"><span class="logo">trello.</span><a href="#read">Mở trên web</a></div>
+      <section class="hero">
+        <p class="eyebrow">TRELLO TEAMWORK</p>
+        <h1>Small steps. Big momentum.</h1>
+        <p>Turn a busy week into a clear plan. Bring your ideas, tasks, and team together in one calm workspace.</p>
+        <a class="button" href="#read">Build your board</a>
+      </section>
+      <p class="body-copy" id="read">A good plan makes room for great work. Start with one priority, break it into manageable steps, and invite your teammates to keep everything moving.</p>
+      <section class="feature">
+        <div class="illustration" aria-hidden="true">✦</div>
+        <div><h2>Your next idea starts here</h2><p>Use a simple board to collect ideas, set a due date, and celebrate progress as a team.</p><a class="text-link" href="#footer">See how it works →</a></div>
+      </section>
+      <footer class="footer" id="footer">Made for your team · Manage preferences · Unsubscribe</footer>
+    </article>
+    <div class="palette">
+      <strong>Phiên bản A — xanh dương &amp; vàng:</strong>
+      <div class="swatches"><span class="swatch" style="background:#2563eb">#2563EB</span><span class="swatch" style="background:#eff6ff;color:#182230">#EFF6FF</span><span class="swatch" style="background:#fbbf24;color:#182230">#FBBF24</span><span class="swatch" style="background:#172033">#172033</span></div>
+    </div>
+
+    <article class="newsletter green">
+      <div class="topline"><span class="logo">trello.</span><a href="#read-green">Mở trên web</a></div>
+      <section class="hero">
+        <p class="eyebrow">TRELLO TEAMWORK</p>
+        <h1>Make space for what matters.</h1>
+        <p>A little more clarity can change your whole week. Keep projects organized and make progress feel natural.</p>
+        <a class="button" href="#read-green">Find your flow</a>
+      </section>
+      <p class="body-copy" id="read-green">Bring the important things into focus. Add a task, share context, and let everyone see what is moving forward.</p>
+      <section class="feature">
+        <div class="illustration" aria-hidden="true">✿</div>
+        <div><h2>Progress grows together</h2><p>Give your ideas a home and turn collaboration into a habit your team can keep.</p><a class="text-link" href="#footer-green">Explore the workspace →</a></div>
+      </section>
+      <footer class="footer" id="footer-green">Made for your team · Manage preferences · Unsubscribe</footer>
+    </article>
+    <div class="palette">
+      <strong>Phiên bản B — xanh lá &amp; cam:</strong>
+      <div class="swatches"><span class="swatch" style="background:#087f5b">#087F5B</span><span class="swatch" style="background:#e8f5ee;color:#18352c">#E8F5EE</span><span class="swatch" style="background:#f2a65a;color:#18352c">#F2A65A</span><span class="swatch" style="background:#18352c">#18352C</span></div>
+    </div>
+  </main>
+</body>
+</html>

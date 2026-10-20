@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ba cách nhúng CSS</title>
+    <link rel="stylesheet" href="activity-1492-external.css">
+    <style>
+        .internal-title { color: #087f5b; }
+        .internal-text { color: #42556a; }
+        .example { padding: 18px; border: 1px solid #d9e0eb; border-radius: 9px; background: white; }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Ba cách nhúng CSS</h1>
+    <section class="example">
+        <h2 style="color: #3159a5;">Inline-style</h2>
+        <p style="color: #a64242;">Inline CSS được viết trực tiếp trong thuộc tính style của phần tử.</p>
+    </section>
+    <section class="example">
+        <h2 class="internal-title">Internal-style</h2>
+        <p class="internal-text">Internal CSS được khai báo trong thẻ style ở phần head của tài liệu.</p>
+    </section>
+    <section class="example external">
+        <h2>External-style</h2>
+        <p>External CSS được lưu ở tệp riêng và liên kết với trang HTML.</p>
+    </section>
+</main>
+</body>
+</html>

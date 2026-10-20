@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Form</title>
+    <style>
+        body { margin: 32px auto; max-width: 680px; padding: 0 18px; color: #202633; }
+        form { font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif; }
+        label, legend { display: block; margin: 16px 0 7px; }
+        input, select { padding: 8px; }
+        .required { color: #c62828; }
+        button { margin-top: 18px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <form method="get" action="activity-1485-simpleform.html">
+        <h1>Order Form</h1>
+        <label for="product">What would you like to buy?</label>
+        <select id="product" name="product">
+            <option value="">Choose a product</option>
+            <option value="a">A</option>
+            <option value="b">B (+ 0.5$)</option>
+            <option value="c">C (+ 0.5$)</option>
+        </select>
+
+        <fieldset>
+            <legend>How many would you like to order?</legend>
+            <label><input type="radio" name="quantity" value="1" required> 1 - $10</label>
+            <label><input type="radio" name="quantity" value="2"> 2 - $20</label>
+            <label><input type="radio" name="quantity" value="3"> 3 - $25</label>
+        </fieldset>
+
+        <label>Name <span class="required">*</span></label>
+        <input type="text" name="firstname" placeholder="First name" autocomplete="given-name" required>
+        <input type="text" name="lastname" placeholder="Last name" autocomplete="family-name" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" autocomplete="email">
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" name="phone" autocomplete="tel">
+        <p><button type="submit">Submit</button></p>
+    </form>
+</body>
+</html>

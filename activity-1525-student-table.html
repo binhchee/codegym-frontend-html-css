@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bảng đơn giản trong HTML</title>
+    <style>
+        body { max-width: 760px; margin: 36px auto; padding: 0 18px; font: 16px/1.5 Arial, sans-serif; color: #182230; }
+        table { width: 100%; border-collapse: collapse; }
+        caption { margin-bottom: 12px; font-size: 1.4rem; font-weight: 700; }
+        th, td { padding: 12px 14px; border: 1px solid #8a93a3; text-align: left; }
+        th { color: white; background: #334e8c; }
+        tbody tr:nth-child(even) { background: #f1f4fa; }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Danh sách học sinh</caption>
+        <thead>
+            <tr><th scope="col">Họ và Tên</th><th scope="col">Tuổi</th><th scope="col">Lớp</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Nguyễn Văn A</td><td>15</td><td>10A1</td></tr>
+            <tr><td>Trần Thị B</td><td>16</td><td>11B2</td></tr>
+            <tr><td>Lê Văn C</td><td>17</td><td>12C3</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>

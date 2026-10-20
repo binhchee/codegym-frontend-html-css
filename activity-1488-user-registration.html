@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng ký người dùng</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 38px 16px; background: #f1f4f9; color: #253047; font: 16px/1.5 Arial, sans-serif; }
+        main { max-width: 540px; margin: auto; padding: 28px; border-radius: 12px; background: #fff; box-shadow: 0 12px 34px #2434541a; }
+        h1 { margin-top: 0; color: #304779; }
+        label { display: block; margin: 16px 0 6px; font-weight: 700; }
+        input { width: 100%; padding: 11px; border: 1px solid #bac4d3; border-radius: 6px; font: inherit; }
+        .gender { display: flex; gap: 18px; }
+        .gender label { display: flex; align-items: center; gap: 7px; font-weight: 400; }
+        .gender input { width: auto; }
+        button { margin-top: 20px; padding: 11px 18px; border: 0; border-radius: 6px; color: white; background: #405db0; font: inherit; font-weight: 700; cursor: pointer; }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Đăng ký người dùng</h1>
+    <form action="http://demo.codegym.vn/6/registration_form/register.php" method="POST">
+        <label for="name">Họ và tên</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="phone">Số điện thoại</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+        <fieldset>
+            <legend>Giới tính</legend>
+            <div class="gender">
+                <label><input name="gender" type="radio" value="male" required> Nam</label>
+                <label><input name="gender" type="radio" value="female"> Nữ</label>
+            </div>
+        </fieldset>
+        <button type="submit">Đăng ký</button>
+    </form>
+</main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; padding-top: 76px; background: #f3f6fa; color: #26364a; font-family: Arial, sans-serif; line-height: 1.65; }
+.main-header { position: fixed; inset: 0 0 auto; z-index: 5; height: 76px; display: flex; align-items: center; justify-content: space-between; padding: 0 max(24px, calc((100% - 1180px) / 2)); background: #fff; box-shadow: 0 3px 14px #18345118; }
+.brand { color: #183b60; font-size: 23px; font-weight: 800; text-decoration: none; }
+.brand span { color: #3a91d3; }
+.main-header nav { display: flex; gap: 26px; }
+.main-header nav a, .sidebar a { color: #35516e; text-decoration: none; }
+.main-header nav a:hover, .sidebar a:hover { color: #1681c4; }
+.page-layout { display: flex; align-items: flex-start; gap: 24px; max-width: 1180px; margin: 36px auto; padding: 0 20px; }
+.sidebar, .content { background: #fff; border: 1px solid #e2e9f0; border-radius: 12px; box-shadow: 0 8px 24px #1834510d; }
+.sidebar { position: sticky; top: 98px; flex: 0 0 210px; padding: 20px; }
+.sidebar h2 { margin: 0 0 14px; font-size: 17px; color: #183b60; }
+.sidebar a { display: block; padding: 9px 0; border-bottom: 1px solid #edf1f5; font-size: 14px; }
+.content { flex: 1; min-width: 0; padding: 36px; }
+.eyebrow { color: #2783bd; font-size: 12px; font-weight: 700; letter-spacing: 1.3px; }
+.content h1 { margin: 8px 0; color: #193c60; font-size: clamp(30px, 4vw, 42px); line-height: 1.2; }
+.lead { color: #61748a; font-size: 18px; }
+.content img { width: 100%; max-height: 340px; margin: 18px 0; border-radius: 9px; object-fit: cover; }
+.content h2 { margin-top: 12px; color: #193c60; }
+.button { display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 6px; background: #197db8; color: #fff; text-decoration: none; }
+.tip { margin-top: 20px; padding: 14px; border-radius: 8px; background: #edf6fc; color: #31536f; font-size: 13px; }
+.tip p { margin-bottom: 0; }
+footer { padding: 24px; background: #183b60; color: #fff; text-align: center; }
+@media (max-width: 900px) { .page-layout { flex-wrap: wrap; } .sidebar-left { flex: 1 1 180px; } .content { order: 3; flex-basis: 100%; } .sidebar-right { flex: 1 1 180px; } }
+@media (max-width: 560px) { body { padding-top: 112px; } .main-header { height: 112px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; } .main-header nav { flex-wrap: wrap; gap: 8px 16px; font-size: 14px; } .page-layout { gap: 12px; margin-top: 18px; padding: 0 12px; } .sidebar { flex-basis: 100%; position: static; } .content { padding: 22px; } }

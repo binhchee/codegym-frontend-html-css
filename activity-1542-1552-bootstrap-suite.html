@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brightpath — Bootstrap Responsive Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root { --brand: #3659c9; --ink: #17223a; }
+    body { color: var(--ink); }
+    .navbar-brand { color: var(--brand); font-weight: 850; letter-spacing: -.03em; }
+    .hero { background: linear-gradient(135deg, #edf2ff, #fff 68%); }
+    .hero-art { min-height: 290px; place-items: center; border-radius: 1.25rem; background: linear-gradient(145deg, #a9bbff, #e2e9ff); }
+    .art-mark { font-size: clamp(5rem, 12vw, 9rem); }
+    .feature-card { height: 100%; border: 1px solid #e5e9f2; border-radius: 1rem; }
+    .feature-icon { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 12px; color: var(--brand); background: #edf1ff; font-size: 1.3rem; }
+    .cta { border-radius: 1.2rem; color: white; background: var(--brand); }
+    footer { color: #d9e1f3; background: #17223a; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#top">Brightpath</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-primary" href="#register">Get started</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main id="top">
+    <section class="hero py-5 py-lg-6">
+      <div class="container py-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="badge text-bg-primary-subtle text-primary mb-3">LEARN WITH CONFIDENCE</span>
+            <h1 class="display-4 fw-bold">Make your next idea your best one.</h1>
+            <p class="lead text-secondary">Practical lessons, thoughtful mentors, and a community that helps you keep moving forward.</p>
+            <a class="btn btn-primary btn-lg mt-2" href="#programs">Explore programs</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-art d-grid place-items-center text-center" role="img" aria-label="Illustration representing a bright learning journey"><span class="art-mark" aria-hidden="true">✦</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container py-5" id="programs">
+      <div class="row justify-content-center text-center mb-4"><div class="col-lg-8"><h2 class="fw-bold">A clear path to your goals</h2><p class="text-secondary">Build practical skills through guided, hands-on learning.</p></div></div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col"><article class="card feature-card p-4"><span class="feature-icon">01</span><h3 class="h5 mt-3">Learn by doing</h3><p class="text-secondary mb-0">Turn concepts into small projects and useful habits.</p></article></div>
+        <div class="col"><article class="card feature-card p-4"><span class="feature-icon">02</span><h3 class="h5 mt-3">Get thoughtful feedback</h3><p class="text-secondary mb-0">See what is working and where to focus next.</p></article></div>
+        <div class="col"><article class="card feature-card p-4"><span class="feature-icon">03</span><h3 class="h5 mt-3">Keep your momentum</h3><p class="text-secondary mb-0">Follow a flexible plan that fits real life.</p></article></div>
+      </div>
+    </section>
+    <section class="container py-4" id="about">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-md-7"><div class="h-100 p-4 p-lg-5 rounded-4 bg-light"><h2 class="fw-bold">A learning community built around people</h2><p class="text-secondary mb-0">Brightpath pairs flexible online resources with practical projects and supportive coaching. Our goal is to help each learner develop confidence one step at a time.</p></div></div>
+        <div class="col-md-5"><div class="h-100 p-4 p-lg-5 rounded-4 bg-primary text-white"><p class="display-5 fw-bold mb-0">4.9/5</p><p class="mb-0">Average learner rating</p><hr><p class="mb-0">Clear lessons. Useful projects. Friendly support.</p></div></div>
+      </div>
+    </section>
+    <section class="container py-5" id="register">
+      <div class="row justify-content-center"><div class="col-lg-7">
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5">
+          <h2 class="h3 fw-bold">Create your learner account</h2>
+          <p class="text-secondary">A short form to get your journey started.</p>
+          <form action="#success" method="get">
+            <div class="mb-3"><label for="name" class="form-label">Full name</label><input class="form-control form-control-lg" id="name" name="name" autocomplete="name" required></div>
+            <div class="mb-3"><label for="email" class="form-label">Email address</label><input class="form-control form-control-lg" id="email" name="email" type="email" autocomplete="email" required></div>
+            <div class="row g-3"><div class="col-sm-6"><label for="password" class="form-label">Password</label><input class="form-control" id="password" type="password" minlength="8" autocomplete="new-password" required></div><div class="col-sm-6"><label for="confirm" class="form-label">Confirm password</label><input class="form-control" id="confirm" type="password" minlength="8" autocomplete="new-password" required></div></div>
+            <div class="form-check my-3"><input class="form-check-input" type="checkbox" id="terms" required><label class="form-check-label" for="terms">I agree to the learning community guidelines.</label></div>
+            <button class="btn btn-primary btn-lg w-100" type="submit">Create account</button>
+          </form>
+          <div class="alert alert-success mt-4 mb-0" id="success" role="status">Thanks for joining Brightpath. Your registration details are ready to review.</div>
+        </div>
+      </div></div>
+    </section>
+    <section class="container py-4" id="contact">
+      <div class="cta p-4 p-lg-5 d-md-flex justify-content-between align-items-center gap-4"><div><h2 class="fw-bold">Ready to take your next step?</h2><p class="mb-md-0 text-white-50">Explore a program that fits your goals and schedule.</p></div><a href="#register" class="btn btn-light btn-lg flex-shrink-0">Join Brightpath</a></div>
+    </section>
+  </main>
+  <footer class="mt-5 py-4"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><strong>Brightpath</strong><span>Learn with confidence · © 2026</span></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

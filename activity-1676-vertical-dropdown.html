@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu dọc có dropdown</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 40px; background: #f0f2f6; font: 16px/1.5 Arial, sans-serif; }
+        h1 { color: #283a5b; }
+        #menu, #menu ul { margin: 0; padding: 0; list-style: none; }
+        #menu { width: 160px; }
+        #menu li { position: relative; width: 160px; min-height: 42px; padding: 0 18px; background: #222; line-height: 42px; cursor: pointer; }
+        #menu li:hover { background: #405b93; }
+        #menu a { color: #fff; text-decoration: none; }
+        #menu ul { position: absolute; top: 0; left: 160px; visibility: hidden; }
+        #menu li:hover > ul, #menu li:focus-within > ul { visibility: visible; }
+        #menu li.has-submenu::after { content: "›"; position: absolute; right: 12px; color: white; }
+        @media (max-width: 480px) { body { padding: 24px 12px; } }
+    </style>
+</head>
+<body>
+    <h1>Explore</h1>
+    <nav aria-label="Main menu">
+        <ul id="menu">
+            <li><a href="#home">Home</a></li>
+            <li class="has-submenu"><a href="#courses">Courses</a>
+                <ul>
+                    <li><a href="#html">HTML</a></li>
+                    <li class="has-submenu"><a href="#css">CSS</a>
+                        <ul>
+                            <li><a href="#selectors">Selectors</a></li>
+                            <li><a href="#layout">Layout</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#javascript">JavaScript</a></li>
+                </ul>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
